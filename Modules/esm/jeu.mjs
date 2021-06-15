@@ -1,17 +1,17 @@
 // import l'API readline (présent dans le binaire de Node)
-const readline = require('readline');
+import { createInterface } from 'readline';
 // importer l'objet exports de random sous le nom Random
-const Random = require('./random');
+import { getRandomInt } from './random.mjs';
 
 class Jeu {
   constructor(options = {}) { // Node.js 4+
     const min = options.min ?? 0; // Node.js 12+
     const max = options.max ?? 100; // Node.js 12+
-    this.rl = readline.createInterface({
+    this.rl = createInterface({
       input: process.stdin,
       output: process.stdout,
     });
-    this.entierAlea = Random.getRandomInt(min, max);
+    this.entierAlea = getRandomInt(min, max);
     this.essais = [];
   }
   jouer() {
@@ -45,4 +45,4 @@ class Jeu {
 }
 
 // exporter Jeu uniquement (avec module.exports)
-module.exports = Jeu;
+export default Jeu;
