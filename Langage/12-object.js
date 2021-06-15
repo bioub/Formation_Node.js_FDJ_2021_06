@@ -36,7 +36,7 @@ console.log(coords.z); // 3
 // .
 console.log(coords.z); // 3
 // [] (plus dynamique)
-console.log(coords['z']); // 3
+console['log'](coords['z']); // 3
 const dimension = 'z'
 console.log(coords[dimension]); // 3
 
@@ -61,6 +61,7 @@ const MyMath = {
 //   return `Hello ${this.name}`;
 // };
 
+// mot clé class ES2015 (Node 4+)
 class Contact {
   constructor(name) {
     this.name = name;
@@ -72,6 +73,7 @@ class Contact {
 
 const romain = new Contact('Romain');
 console.log(typeof romain); // object
+// delete romain.name;
 console.log(romain.name); // Romain
 console.log(romain.hello()); // Hello Romain
 
