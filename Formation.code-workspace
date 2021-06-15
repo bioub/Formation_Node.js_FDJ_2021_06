@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "Modules"
+		},
+		{
+			"path": "API-Node.js"
 		}
 	]
 }
