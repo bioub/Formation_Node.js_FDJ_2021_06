@@ -6,7 +6,7 @@ const packagePath = path.resolve(__dirname, 'package.json');
 // Par défaut lire un fichier retourne un Buffer (tableau d'octet)
 // Appeler toString permet d'appliquer un encodage de caractères
 // const buffer = fs.readFileSync(packagePath);
-// console.log(buffer.toString('utf8'));
+// console.log(buffer.toString('utf-8'));
 // console.log(buffer.toString('latin1'));
 // console.log(buffer.toString('ascii'));
 
@@ -27,5 +27,6 @@ fs.readFile(packagePath, { encoding: 'utf-8' }, (err, content) => {
 });
 
 // Style Asynchrone basé sur des promesses (nouveauté de Node 12)
-fs.promises.readFile(packagePath, { encoding: 'utf-8' })
+fs.promises
+  .readFile(packagePath, { encoding: 'utf-8' })
   .then((content) => console.log(content));

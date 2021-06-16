@@ -7,4 +7,3 @@ console.log(os.freemem());
 console.log(os.cpus().length);
 
 console.log(os.homedir());
-

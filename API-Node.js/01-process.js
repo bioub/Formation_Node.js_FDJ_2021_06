@@ -23,4 +23,3 @@ console.log(process.cwd()); // /Users/romain/Desktop/Formation_Node.js_FDJ/API-N
 
 // Variables d'environnements
 console.log(process.env.PATH.split(':'));
-

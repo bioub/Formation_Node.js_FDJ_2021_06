@@ -74,7 +74,7 @@ fs.promises
       throw err;
     }
   })
-  .then(() => fs.readFile(packagePath))
+  .then(() => fs.promises.readFile(packagePath))
   .then((buffer) => fs.promises.writeFile(packageCopyPath, buffer))
   .then(() => console.log('Copy Done'))
   .catch((err) => console.log(err));

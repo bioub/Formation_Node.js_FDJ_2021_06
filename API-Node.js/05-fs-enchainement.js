@@ -4,7 +4,6 @@ const path = require('path');
 const packagePath = path.resolve(__dirname, 'package.json');
 const packageCopyPath = path.resolve(__dirname, 'package.json.copy');
 
-
 // Style Synchrone
 // pile d'appel
 // ^
@@ -52,7 +51,8 @@ fs.readFile(packagePath, (err, buffer) => {
 });
 
 // Style Asynchrone basé sur des promesses (nouveauté de Node 12)
-fs.promises.readFile(packagePath)
+fs.promises
+  .readFile(packagePath)
   .then((buffer) => fs.promises.writeFile(packageCopyPath, buffer))
   .then(() => console.log('Copy Done'))
   .catch((err) => console.log(err));
@@ -67,7 +67,6 @@ fs.promises.readFile(packagePath)
     console.log(err);
   }
 })();
-
 
 // ES2022 : top level await
 // try {
